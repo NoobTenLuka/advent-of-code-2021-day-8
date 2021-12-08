@@ -1,13 +1,23 @@
 use itertools::Itertools;
-use std::{collections::HashMap, fs, path::Path};
+use std::{collections::HashMap, fs, path::Path, time::Instant};
 
 const ALL_CHARS: &str = "abcdefg";
 
 fn main() {
     let inputs = read_inputs("input.txt");
 
+    let start = Instant::now();
     solution_1(&inputs);
+    println!(
+        "It took {:?} for the first solution to complete.",
+        start.elapsed()
+    );
+    let start = Instant::now();
     solution_2(&inputs);
+    println!(
+        "It took {:?} for the first solution to complete.",
+        start.elapsed()
+    );
 }
 
 fn solution_1(all_inputs_and_outputs: &[(String, String)]) {
